@@ -932,17 +932,17 @@ class Workflow(object):
 
         """
 
-        cache_path = self.cachefile('%s.cache' % name)
-        age = self.cached_data_age(name)
-        if (age < max_age or max_age == 0) and os.path.exists(cache_path):
-            with open(cache_path, 'rb') as file:
-                self.logger.debug('Loading cached data from : %s',
-                                  cache_path)
-                return pickle.load(file)
+#        cache_path = self.cachefile('%s.cache' % name)
+#        age = self.cached_data_age(name)
+#        if (age < max_age or max_age == 0) and os.path.exists(cache_path):
+#            with open(cache_path, 'rb') as file:
+#                self.logger.debug('Loading cached data from : %s',
+#                                  cache_path)
+#                return pickle.load(file)
         if not data_func:
             return None
         data = data_func()
-        self.cache_data(name, data)
+#        self.cache_data(name, data)
         return data
 
     def cache_data(self, name, data):
